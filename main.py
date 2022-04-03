@@ -74,7 +74,7 @@ t1_1kl = time.perf_counter()
 sorter.get_strategy().sort(r1kl)
 t2_1kl = time.perf_counter()
 # print(r1kl.__str__())
-print("BUBBLE SORT -----------------random 1k----------------")
+print("IMPROVED BUBBLE SORT -----------------random 1k----------------")
 print(t2_1kl - t1_1kl)
 
 # print(random_10k_list.__str__())

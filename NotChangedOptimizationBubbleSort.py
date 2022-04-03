@@ -12,7 +12,7 @@ class NotChangedOptimizedBubbleSort(BubbleSort):
         for i in range(0, n):
             changed = False
             for j in range(1, n):
-                if array[j - i] > array[j]:
+                if array[j - 1] > array[j]:
                     array[j - 1], array[j] = array[j], array[j - 1]
                     changed = True
             if not changed:
