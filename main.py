@@ -1,7 +1,8 @@
 # imports
 import random
+import time
 
-from BubbleSort import BubbleSort
+from NotChangedOptimizationBubbleSort import NotChangedOptimizedBubbleSort
 from InsertionSort import InsertionSort
 from SelectionSort import SelectionSort
 from SortContext import SortContext
@@ -61,41 +62,65 @@ for i in range(100000):
 
 
 ####################### big data sort execution
-bubble_sort = BubbleSort()
+bubble_sort = NotChangedOptimizedBubbleSort()
 insertion_sort = InsertionSort()
 selection_sort = SelectionSort()
 
 # BUBBLE
 sorter = SortContext(bubble_sort)
-print(random_1k_list.__str__())
+# print(random_1k_list.__str__())
 r1kl = random_1k_list.copy()
+t1_1kl = time.perf_counter()
 sorter.get_strategy().sort(r1kl)
-print(r1kl.__str__())
+t2_1kl = time.perf_counter()
+# print(r1kl.__str__())
+print("BUBBLE SORT -----------------random 1k----------------")
+print(t2_1kl - t1_1kl)
 
-print(random_10k_list.__str__())
+# print(random_10k_list.__str__())
 r10kl = random_10k_list.copy()
+t1_10kl = time.perf_counter()
 sorter.get_strategy().sort(r10kl)
-print(r10kl.__str__())
+t2_10kl = time.perf_counter()
+print("IMPROVED BUBBLE SORT -----------------random 10k----------------")
+print(t2_10kl - t1_10kl)
+# print(r10kl.__str__())
 
-print(random_100k_list.__str__())
+# print(random_100k_list.__str__())
 r100kl = random_100k_list.copy()
+t1_100kl = time.perf_counter()
 sorter.get_strategy().sort(r100kl)
-print(r100kl.__str__())
+t2_100kl = time.perf_counter()
+print("IMPROVED BUBBLE SORT -----------------random 100k----------------")
+print(t2_100kl - t1_100kl)
+# print(r100kl.__str__())
 
-print(sequential_1k_list.__str__())
+# print(sequential_1k_list.__str__())
 s_r1kl = sequential_1k_list.copy()
+t1_sr1kl = time.perf_counter()
 sorter.get_strategy().sort(s_r1kl)
-print(s_r1kl.__str__())
+t2_sr1kl = time.perf_counter()
+print("IMPROVED BUBBLE SORT -----------------sequential 1k----------------")
+print(t2_sr1kl - t1_sr1kl)
+# print(s_r1kl.__str__())
 
-print(sequential_10k_list.__str__())
+# print(sequential_10k_list.__str__())
 s_r10kl = sequential_10k_list.copy()
+t1_sr10kl = time.perf_counter()
 sorter.get_strategy().sort(s_r10kl)
-print(s_r10kl.__str__())
+t2_sr10kl = time.perf_counter()
+print("IMPROVED BUBBLE SORT -----------------sequential 10k----------------")
+print(t2_sr10kl - t1_sr10kl)
+# print(s_r10kl.__str__())
 
-print(sequential_100k_list.__str__())
+# print(sequential_100k_list.__str__())
 s_r100kl = sequential_100k_list.copy()
+t1_sr100kl = time.perf_counter()
 sorter.get_strategy().sort(s_r100kl)
-print(s_r100kl.__str__())
+t2_sr100kl = time.perf_counter()
+print("IMPROVED BUBBLE SORT -----------------sequential 100k----------------")
+print(t2_sr100kl - t1_sr100kl)
+# print(s_r100kl.__str__())
 
 # INSERTION
 sorter.set_strategy(insertion_sort)
