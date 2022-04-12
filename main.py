@@ -64,6 +64,6 @@ sorter.set_strategy(selection_sort)
 do_tests()
 
 # SHELL
-print(colored("SHELL SORT", 'red))
+print(colored("SHELL SORT", 'red'))
 sorter.set_strategy(shell_sort)
 do_tests()
