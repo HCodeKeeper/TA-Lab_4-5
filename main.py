@@ -7,6 +7,7 @@ from BubbleSort import BubbleSort
 from InsertionSort import InsertionSort
 from SelectionSort import SelectionSort
 from SortContext import SortContext
+from ShellSort import ShellSort
 
 random_lists = [
     [random.randrange(1, 1000) for i in range(1000)],
@@ -45,6 +46,7 @@ def do_tests():
 bubble_sort = BubbleSort()
 insertion_sort = InsertionSort()
 selection_sort = SelectionSort()
+shell_sort = ShellSort()
 
 # BUBBLE
 print(colored("BUBBLE SORT", 'red'))
@@ -59,4 +61,9 @@ do_tests()
 # SELECTION
 print(colored("SELECTION SORT", 'red'))
 sorter.set_strategy(selection_sort)
+do_tests()
+
+# SHELL
+print(colored("SHELL SORT", 'red))
+sorter.set_strategy(shell_sort)
 do_tests()
