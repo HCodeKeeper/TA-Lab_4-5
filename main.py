@@ -8,6 +8,7 @@ from InsertionSort import InsertionSort
 from SelectionSort import SelectionSort
 from SortContext import SortContext
 from ShellSort import ShellSort
+from merge_sort import MergeSort
 
 random_lists = [
     [random.randrange(1, 1000) for i in range(1000)],
@@ -47,6 +48,7 @@ bubble_sort = BubbleSort()
 insertion_sort = InsertionSort()
 selection_sort = SelectionSort()
 shell_sort = ShellSort()
+merge_sort = MergeSort()
 
 # BUBBLE
 print(colored("BUBBLE SORT", 'red'))
@@ -68,8 +70,10 @@ print(colored("SHELL SORT", 'red'))
 sorter.set_strategy(shell_sort)
 do_tests()
 
-'''merge sort 
-from merge_sort import sort
+#MERGE
+
+print(colored("MERGE SORT", 'red'))
+sorter.set_strategy(merge_sort)
 
 
 k100 = [random.randrange(1, 100_000) for _ in range(100_000)]
@@ -82,16 +86,19 @@ kk_c = kk.copy()
 sk100_c = sk100.copy()
 skk_c = skk.copy()
 
+print("random 100k")
 t = time.perf_counter()
-sort(k100_c)
+sorter.get_strategy().sort(kk100_c)
 print((time.perf_counter() - t) * 1000)
+print("random 1kk")
 t = time.perf_counter()
-sort(kk_c)
+sorter.get_strategy().sort(kk_c)
 print((time.perf_counter() - t) * 1000)
+print("100k")
 t = time.perf_counter()
-sort(sk100_c)
+sorter.get_strategy().sort(sk100_c)
 print((time.perf_counter() - t) * 1000)
+print("1kk")
 t = time.perf_counter()
-sort(skk_c)
+sorter.get_strategy().sort(skk_c)
 print((time.perf_counter() - t) * 1000)
-```
