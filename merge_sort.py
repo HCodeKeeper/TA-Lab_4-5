@@ -11,8 +11,8 @@ class MergeSort(Sort):
 
         left = arr[:mid]
         right = arr[mid:]
-        sort(left)
-        sort(right)
+        self.sort(left)
+        self.sort(right)
 
         i=k=j=0
         while i < len(left) and k < len(right):
